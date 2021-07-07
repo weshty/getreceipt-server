@@ -32,7 +32,7 @@ incomeBillSchema.methods.encryptImportance = function() {
 var IncomeBill = model.model('IncomeBill', incomeBillSchema);
 module.exports.add = (income, callback) => {
         const newincomeitem = new IncomeBill(income);
-        newincomeitem.encryptImportance();
+        // newincomeitem.encryptImportance();
         newincomeitem.save().then(() => {
                 callback(null, '新的收入记录已储存');
         });

@@ -30,10 +30,10 @@ var transToModelType = (oneincomerecord)=>{
         else
             onerecord.time=oneincomerecord.time;
         console.log("time转为UTC得"+onerecord.time);
-        onerecord.amount=oneincomerecord.money;
-        onerecord.platform=oneincomerecord.type;
-        onerecord.content=oneincomerecord.content;
-        onerecord.deviceid=oneincomerecord.content;
+        onerecord.amount=encrypt.decryptReceived(oneincomerecord.money);
+        onerecord.platform=encrypt.decryptReceived(oneincomerecord.type);
+        onerecord.content=encrypt.decryptReceived(oneincomerecord.content);
+        onerecord.deviceid=encrypt.decryptReceived(oneincomerecord.deviceid);
         onerecord.is_pre_encrypt=oneincomerecord.encrypt;
         return onerecord;
 }
